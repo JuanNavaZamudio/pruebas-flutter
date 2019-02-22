@@ -4,7 +4,7 @@ import 'description_place.dart';
 void main() => runApp(new MyApp());
 
 
-final text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper massa lacus. Donec enim augue, vehicula nec sem nec, pulvinar sagittis risus. Suspendisse pharetra risus nec dui maximus pretium a nec libero. Donec dapibus porttitor volutpat. Etiam at metus quis elit accumsan scelerisque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed pharetra consectetur sollicitudin. Nam mauris tellus, interdum et porta nec, consequat in tortor. Suspendisse imperdiet lobortis congue.";
+String text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper massa lacus. Donec enim augue, vehicula nec sem nec, pulvinar sagittis risus. Suspendisse pharetra risus nec dui maximus pretium a nec libero. Donec dapibus porttitor volutpat. Etiam at metus quis elit accumsan scelerisque.";
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -27,7 +27,13 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("Hola mundo"),
         ),
-        body: DescriptionPlace("New York",3.5,text) ,
+        body: ListView(
+          shrinkWrap: true,
+          padding: const EdgeInsets.all(20.0),
+          children: <Widget>[
+            DescriptionPlace("New York",3.5,text) ,
+          ],
+        )
       )
     );
   }

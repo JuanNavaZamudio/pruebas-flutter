@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'starsRating.dart';
+import 'review_list.dart';
 
 class DescriptionPlace extends StatelessWidget{
 
@@ -11,77 +13,24 @@ class DescriptionPlace extends StatelessWidget{
   @override
   Widget build(BuildContext context){
 
-    final star = Container(
-      margin: EdgeInsets.only(
-        top: 323.0,
-        right: 3.0
-      ),
-      child: Icon(
-        Icons.star,
-        color: Color(0xFFF2C611),
-      ),
-    );
-
-    final star_half = Container(
-      margin: EdgeInsets.only(
-          top: 323.0,
-          right: 3.0
-      ),
-      child: Icon(
-        Icons.star_half,
-        color: Color(0xFFF2C611),
-      ),
-    );
-
-    final star_border=Container(
-      margin: EdgeInsets.only(
-          top: 323.0,
-          right: 3.0
-      ),
-      child: Icon(
-        Icons.star_border,
-        color: Color(0xFFF2C611),
-      ),
-    );
-
-    List<Widget> fillStars(totEstrellas){
-      List<Widget> estrellas = new List<Widget>();
-      int emptyStars=0;
-      for(int i =1; i<totEstrellas;i++)
-        estrellas.add(star);
-
-      if(totEstrellas%2 == 0.5)
-        estrellas.add(star_half);
-
-      if(estrellas.length < 5)
-        emptyStars = 5 - estrellas.length;
-
-      for(int i =0; i<emptyStars;i++)
-        estrellas.add(star_border);
-
-        return estrellas;
-    }
-
     final title_stars = Row(
       children: <Widget>[
         Container(
           margin: EdgeInsets.only(
-            top: 320.0,
             left: 20.0,
             right: 20.0
           ),
           child: Text(
             namePlace,
             style: TextStyle(
+              fontFamily: "Lato",
               fontSize: 30.0,
               fontWeight: FontWeight.w900
             ),
             textAlign: TextAlign.left,
           ),
         ),
-        Row(
-          children: fillStars(stars),
-        )
+        StarsRating(stars)
       ],
     );
 
@@ -101,11 +50,18 @@ class DescriptionPlace extends StatelessWidget{
       ),
     );
 
-    return Column(
+    return
+      Container(
+        margin: EdgeInsets.only(
+          top: 320.0,
+        ),
+        child: Column(
         children: <Widget>[
           title_stars,
-          description
+          description,
+          ReviewList()
         ],
+      )
       )
     ;
   }
