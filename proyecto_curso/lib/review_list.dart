@@ -5,6 +5,7 @@ class ReviewList extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Review(
           "assets/img/people.jpg",
@@ -18,7 +19,7 @@ class ReviewList extends StatelessWidget{
             "Fernando",
             "2 review . 7 photos",
             "Excelente para las vacaciones",
-            4.5
+            3.0
         )
       ],
     );

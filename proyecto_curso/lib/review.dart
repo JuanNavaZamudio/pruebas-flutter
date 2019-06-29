@@ -65,7 +65,7 @@ class Review extends StatelessWidget{
         Row(
           children: <Widget>[
             userInfo,
-            StarsRating(stars)
+            StarsRating.small(stars)
           ],
         ),
         userComment
@@ -75,7 +75,7 @@ class Review extends StatelessWidget{
     final photo = Container(
       margin: EdgeInsets.only(
         left: 20.0,
-        right: 20.0
+        right: 10.0
       ),
       width: 80.0,
       height: 80.0,

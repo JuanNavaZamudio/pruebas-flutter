@@ -27,7 +27,9 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("Hola mundo"),
         ),
-        body: ListView(
+        body: //Stack()
+
+        ListView(
           shrinkWrap: true,
           padding: const EdgeInsets.all(20.0),
           children: <Widget>[
